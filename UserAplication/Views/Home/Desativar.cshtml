@@ -1,0 +1,23 @@
+ @model Usuario;
+@{
+    ViewData["Title"] = "Desativar";
+} 
+
+<form method="Post" asp-controller="Home" asp-action="Disable">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+			<h2 class="text-primary">Desativar Contato</h2>
+			<hr />
+		</div>
+        <div class="mb-3">
+			<label asp-for="Id"></label>
+			<input asp-for="Id" disabled class="form-control" />
+		</div>
+        <div class="mb-5">
+			<label asp-for="NomeDoContato"></label>
+			<input asp-for="NomeDoContato" disabled class="form-control" />
+		</div>
+        <button type="submit" class="btn btn-dark">Desativar</button>
+        <a class="btn btn-secondary" asp-controller="Home" asp-action="Index">Voltar</a>
+    </div>
+</form>

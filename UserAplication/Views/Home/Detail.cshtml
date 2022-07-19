@@ -1,0 +1,50 @@
+@model Usuario;
+@{
+    ViewData["Title"] = "Detalhes";
+} 
+<table class="table table-bordered table-striped mb-5" style="width:50%">
+    <tbody>
+        <tr>
+            <td width="20%">
+                Id
+            </td>
+            <td>
+                @Model.Id
+            </td>
+        </tr>
+        <tr>
+            <td width="20%">
+                Nome
+            </td>
+            <td>
+                @Model.NomeDoContato
+            </td>
+        </tr>
+        <tr>
+            <td width="20%">
+                Nacimento
+            </td>
+            <td>
+                @Model.DataDeNacimento.ToShortDateString()
+            </td>
+        </tr>
+        <tr>
+            <td width="20%">
+                Sexo
+            </td>
+            <td>
+                @Model.Sexo
+            </td>
+        </tr>
+        <tr>
+            <td width="20%">
+                Idade
+            </td>
+            <td>
+                @Model.Idade
+            </td>
+        </tr> 
+    </tbody>
+</table>
+<a class="btn btn-secondary" asp-controller="Home" asp-action="Index">Voltar</a>
+

@@ -1,0 +1,40 @@
+@model Usuario;
+@{  
+	ViewData["Title"] = "Editar";
+    string data = Model.DataDeNacimento.ToString("yyyy'-'MM'-'dd");
+}
+
+<form method="post" asp-controller="Home" asp-action="Edit">
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Editar Usuario</h2>
+			<hr />
+		</div>
+		<input type="hidden" asp-for="Id" value="@Model.Id">
+		<div class="mb-3">
+			<label asp-for="NomeDoContato"></label><br>
+			<input type="text" asp-for="NomeDoContato" required>
+			<span asp-validation-for="NomeDoContato" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="DataDeNacimento"></label><br>
+			<input type="date" asp-for="DataDeNacimento" value="@data" required>
+			<span asp-validation-for="DataDeNacimento" class="text-danger"></span>
+		</div>
+		<div class="mb-5">	
+			<label asp-for="Sexo"></label><br>
+			<select asp-for="Sexo" required>
+				<option value="Masculino">Masculino</option>
+				<option value="Feminino">Feminino</option>
+			</select>
+		</div>
+		<button type="submit" class="btn btn-primary">Alterar</button>
+		<a asp-controller="Home" asp-action="Index" class="btn btn-secondary">Voltar</a>
+	</div>
+</form>
+
+@section Scripts{
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+}
